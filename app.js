@@ -3,47 +3,37 @@ const e = "enter";
 const i = "imes";
 const o = "ober";
 const u = "ufat";
-
-// console.log(textoAPoner);
-// console.log(textoIngresado);
-// let textoAPoner2= document.CreateTextNode("textoIngresado.replace(/a/gi,a)");
-// textoAPoner.appendChild(textoAPoner2);
-// console.log(textoAPoner);
 const textoIngresado = document.getElementById("textoingresado");
+const textoAPoner = document.getElementById("textoAPoner");
+const contenidos1 = document.getElementById("contenidosDerecha1");
+const contenidos2 = document.getElementById("contenidosDerecha2");
 
 window.onload = textoIngresado.focus();
 
 function CarNoValidos() {
-  const textoIngresado = document.getElementById("textoingresado");
-
-  textoIngresado.addEventListener("keyup", (e)=> {
-  let expRegu= /[A-Záéíóú\u00B4]/g;
-  let valorInput= e.target.value;
-    // if(valorInput==expRegu){
-      perro= textoIngresado.value= valorInput.replace(expRegu, "");
-      if (valorInput==expRegu) {
-        alert("no uses mayusculas urita");
-      }
-      // alert("no uses mayusculas urita");
-      
-    })
-  //}
+  textoIngresado.addEventListener("keyup", (e) => {
+    let expRegu = /[A-Záéíóú\u00B4]/g;
+    let valorInput = e.target.value;
+    // console.log(valorInput == expRegu);
+    textoIngresado.value = valorInput.replace(expRegu, "");
+    if (valorInput == expRegu) {
+      alert("no uses mayusculas urita");
+    }
+  });
 }
-
 CarNoValidos();
 
-function Encriptado() {
-  let textoIngresado = document.getElementById("textoingresado");
-  let textoAPoner = document.getElementById("textoAPoner");
-  let contenidos1 = document.getElementById("contenidosDerecha1");
-  let contenidos2 = document.getElementById("contenidosDerecha2");
+contenidos2.style.display = "none";
 
-  contenidos1.style.display= "none";
-  // setTimeout(() => {
-  contenidos2.style.removeProperty("display");
+function Encriptado() {
+  if (contenidos2.style.display = "none") {
+    contenidos1.style.display = "none";
+    contenidos2.style.removeProperty("display");
+  // contenidos2.style.animationName = "transicions";
+  // contenidos2.style.animationDuration = "2s";
+  }
   // }, 1000);
   // contenidos2.className.replace("contenidosDerecha2", "transicion");
-
   textoDividido = textoIngresado.value.split("");
   // console.log(textoDividido);
   let textoNuevo = [];
@@ -52,7 +42,6 @@ function Encriptado() {
     let letra = textoDividido[index];
     // console.log(textoNuevo);
     textoNuevo.push(letra);
-
     if (
       letra == "a" ||
       letra == "e" ||
@@ -93,36 +82,38 @@ function Encriptado() {
       // console.log(textoNuevo);
     }
   }
-
   textoEncriptado = textoNuevo.join("");
   textoAPoner.value = textoEncriptado;
-  textoIngresado.value="";
+  textoIngresado.value = "";
 }
 
 function desencriptado() {
-  let textoIngresado = document.getElementById("textoingresado");
-  let textoAPoner = document.getElementById("textoAPoner");
-  let contenidos1 = document.getElementById("contenidosDerecha1");
-  let contenidos2 = document.getElementById("contenidosDerecha2");
 
-  if (contenidos2.style.display == "none") {
-    contenidos2.style.removeProperty("display");
+  if (contenidos2.style.display = "none") {
     contenidos1.style.display = "none";
+    contenidos2.style.removeProperty("display");
+  // contenidos2.style.animationName = "transicions";
+  // contenidos2.style.animationDuration = "2s";
   }
 
   let textoNuevo;
   let textoDesencriptado;
 
-  textoNuevo=textoIngresado.value.replaceAll(a,"a").replaceAll(e, "e").replaceAll(i, "i").replaceAll(o, "o").replaceAll(u, "u");
+  textoNuevo = textoIngresado.value
+    .replaceAll(a, "a")
+    .replaceAll(e, "e")
+    .replaceAll(i, "i")
+    .replaceAll(o, "o")
+    .replaceAll(u, "u");
 
-  textoAPoner.value=textoNuevo;
-  textoIngresado.value="";
+  textoAPoner.value = textoNuevo;
+  textoIngresado.value = "";
 }
-
-function copiar(){
+function copiar() {
   let textoIngresado = document.getElementById("textoingresado");
   let textoAPoner = document.getElementById("textoAPoner");
   textoAPoner.select();
-  document.execCommand('copy');
+  document.execCommand("copy");
   window.getSelection().removeAllRanges();
+  window.location.reload();
 }
