@@ -1,5 +1,6 @@
-html{
+html {
   scroll-behavior: smooth;
+  transition: all 3s;
 }
 
 body {
@@ -7,6 +8,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: #f3f5fc;
+  animation-name: transicionsHtml;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
 }
 
 .contenedor-total {
@@ -31,6 +35,12 @@ body {
   /* left: -300px; */
   /* transform: translateX(300px); */
   /* transition: all 4s; */
+  animation-name: imgCambia;
+  animation-duration: 1.5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction:alternate-reverse;
+  animation-timing-function: ease;
 }
 
 /* .contenedor__contenidosIzquierda {
@@ -60,6 +70,11 @@ body {
   /* transform: translateY(500px); */
   /* transition: all 2s; */
   overflow: hidden;
+  animation-name: rot;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
 }
 /* .contenedor__contenidosIzquierda textarea:focus {
   background: #0a3871;
@@ -73,6 +88,7 @@ body {
 }
 
 .contenedor__contenidosIzquierda ::placeholder {
+  position: absolute;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -128,7 +144,7 @@ body {
   width: 100%;
 }
 
-.botones .boton1{
+.botones .boton1 {
   /* width: 328px; */
   width: 100%;
   height: 67px;
@@ -141,7 +157,7 @@ body {
   line-height: 19px;
   text-align: center;
   color: #ffffff;
-  /* transition: all 0.3s; */
+  transition: all 0.3s;
 }
 
 /* .botones :hover {
@@ -149,7 +165,7 @@ body {
   scale: 1.05;
 } */
 
-.botones .boton2{
+.botones .boton2 {
   /* width: 328px; */
   width: 100%;
   height: 67px;
@@ -163,12 +179,14 @@ body {
   line-height: 19px;
   text-align: center;
   color: #0a3871;
-  /* transition: all 0.3s; */
+  transition: all 0.3s;
 }
 
 .botones button:hover {
-  box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.8);
-  scale: 1.05;
+  /* box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.8); */
+  -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+  scale: 1.04;
 }
 
 .contenedor__contenidosDerecha {
@@ -238,6 +256,62 @@ body {
     font-size: 24px;
   }
 }
+
+@keyframes transicionsHtml {
+  0% {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    /* transform: rotate3d(0deg); */
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    /* transform: rotate3d(1,0,0,360deg); */
+  }
+  /* 100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  } */
+}
+
+@keyframes rot {
+  0% {
+   transform: rotate(0deg)
+              translate(0px)
+              rotate(0deg);
+  }
+  100% {
+   transform: rotate(720deg)
+              translate(-10px)
+              rotate(-720deg)
+              translate(10px) ;
+  }
+ }
+
+ @keyframes imgCambia {
+  0% {
+    filter: opacity(0.8) drop-shadow(0 0 0 rgb(255, 253, 253));
+  }
+  100% {
+    filter: opacity(1) drop-shadow(-0.5px 0 1.5px);
+  }
+ }
+
+ @keyframes rotParrafoSi {
+  0% {
+   transform: rotate(0deg)
+              translate(0px)
+              rotate(0deg);
+}
+   100% {
+    transform: rotate(3000deg)
+               translate(-8px)
+               rotate(-3000deg)
+               translate(8px) ;
+   }
+ }
 
 .contenidosDerecha2 {
   position: relative;
@@ -315,18 +389,19 @@ body {
   text-align: center;
   color: #0a3871;
   /* transform: translateY(-550px); */
-  /* transition: all 0.3s; */
+  transition: all 0.3s;
 }
 
 .contenidosDerecha2 button a {
   text-decoration: none;
   box-shadow: none;
-  color: #0A3871;
+  color: #0a3871;
 }
 
 .contenidosDerecha2 button:hover {
   cursor: pointer;
-  box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 1px 0px rgb(0 0 0 / 10%);
   scale: 1.05;
 }
 
@@ -376,30 +451,30 @@ body {
   .contenidosDerecha2 button {
     bottom: 40%;
   }
- 
+
   .imagen-muñeco {
     text-align: center;
     width: 100%;
     top: 25%;
   }
 
- .imagen-muñeco img {
-  display: none;
-}
+  .imagen-muñeco img {
+    display: none;
+  }
 }
 
 @media (max-width: 426px) {
- .contenedor__contenidosIzquierda textarea {
-  margin-bottom: 10px;
-  margin-top: 10px;
- }
+  .contenedor__contenidosIzquierda textarea {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 
-.botonesYp {
-  top: 0%;
-  padding-top: 0px;
-}
+  .botonesYp {
+    top: 0%;
+    padding-top: 0px;
+  }
 
-.botones {
-  flex-wrap: wrap;
-}
+  .botones {
+    flex-wrap: wrap;
+  }
 }

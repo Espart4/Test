@@ -7,8 +7,10 @@ const textoIngresado = document.getElementById("textoingresado");
 const textoAPoner = document.getElementById("textoAPoner");
 const contenidos1 = document.getElementById("contenidosDerecha1");
 const contenidos2 = document.getElementById("contenidosDerecha2");
+const cont2None= contenidos2.style.display = "none";
 
 window.onload = textoIngresado.focus();
+CarNoValidos();
 
 function CarNoValidos() {
   textoIngresado.addEventListener("keyup", (e) => {
@@ -21,18 +23,12 @@ function CarNoValidos() {
     }
   });
 }
-CarNoValidos();
-
-contenidos2.style.display = "none";
 
 function Encriptado() {
-  if (contenidos2.style.display = "none") {
+  if ((cont2None)) {
     contenidos1.style.display = "none";
     contenidos2.style.removeProperty("display");
-  // contenidos2.style.animationName = "transicions";
-  // contenidos2.style.animationDuration = "2s";
   }
-  // }, 1000);
   // contenidos2.className.replace("contenidosDerecha2", "transicion");
   textoDividido = textoIngresado.value.split("");
   // console.log(textoDividido);
@@ -82,18 +78,16 @@ function Encriptado() {
       // console.log(textoNuevo);
     }
   }
+
   textoEncriptado = textoNuevo.join("");
   textoAPoner.value = textoEncriptado;
   textoIngresado.value = "";
 }
 
 function desencriptado() {
-
-  if (contenidos2.style.display = "none") {
+  if ((cont2None)) {
     contenidos1.style.display = "none";
     contenidos2.style.removeProperty("display");
-  // contenidos2.style.animationName = "transicions";
-  // contenidos2.style.animationDuration = "2s";
   }
 
   let textoNuevo;
@@ -109,6 +103,7 @@ function desencriptado() {
   textoAPoner.value = textoNuevo;
   textoIngresado.value = "";
 }
+
 function copiar() {
   let textoIngresado = document.getElementById("textoingresado");
   let textoAPoner = document.getElementById("textoAPoner");
