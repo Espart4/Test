@@ -359,7 +359,7 @@ body {
   outline: none;
   position: relative;
   overflow: hidden;
-  font-size: 24px;
+  font-size: 0px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -374,7 +374,8 @@ body {
 
 .animacionTxt{
   animation-name: transicionstxt;
-  animation-duration: 4s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .botonCpy {

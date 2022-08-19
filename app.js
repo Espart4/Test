@@ -11,6 +11,7 @@ const cont2None = (contenidos2.style.display = "none");
 
 window.onload = textoIngresado.focus();
 carNoValidos();
+vidPlay.load();
 
 function carNoValidos() {
   textoIngresado.addEventListener("keyup", (e) => {
@@ -21,8 +22,8 @@ function carNoValidos() {
 }
 
 function Encriptado() {
-  animar();
   videoPop();
+  animar();
   if (cont2None) {
     contenidos1.style.display = "none";
     contenidos2.style.removeProperty("display");
@@ -74,8 +75,8 @@ function Encriptado() {
 }
 
 function desencriptado() {
-  animar();
   videoPop();
+  animar();
   if (cont2None) {
     contenidos1.style.display = "none";
     contenidos2.style.removeProperty("display");
@@ -102,9 +103,9 @@ function copiar() {
 }
 
 function animar() { 
+  textoAPoner.classList.toggle("animacionTxt")
   document.getElementById("derecha").classList.remove("animacion");
  document.getElementById("derecha").classList.toggle("animacion2");
-  textoAPoner.classList.toggle("animacionTxt")
   setTimeout(() => {
     textoAPoner.classList.toggle("animacionTxt")
     document.getElementById("derecha").classList.toggle("animacion2");
@@ -112,7 +113,10 @@ function animar() {
 }
 
 function videoPop() {
-  videoMostra = document.getElementById("video");
+  let vidPlay= document.getElementById("vid");
+  vidPlay.load();
+  vidPlay.play();
+  let videoMostra = document.getElementById("video");
   videoMostra.classList.toggle("vidMostrar");
   setTimeout(() => {
     videoMostra.classList.toggle("vidMostrar");
