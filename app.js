@@ -11,7 +11,6 @@ const cont2None = (contenidos2.style.display = "none");
 
 window.onload = textoIngresado.focus();
 carNoValidos();
-vidPlay.load();
 
 function carNoValidos() {
   textoIngresado.addEventListener("keyup", (e) => {
