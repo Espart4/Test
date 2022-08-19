@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     />
     <title>Encriptador</title>
   </head>
@@ -24,17 +24,17 @@
             placeholder="Ingrese su texto aquí"
           ></textarea>
           <div class="botonesYp">
-            <p id="parrafin">
-              <img src="Vector.png" alt="icono-exclamacion" />Sólo letras
+            <p>
+              <img src="Vector.png" alt="icono-exclamacion" style="filter:opacity(.8) drop-shadow(0 0 0 rgb(0, 0, 0));" />Sólo letras
               minúsculas y sin acento
             </p>
             <div class="botones">
               <a href="#derecha">
-                <button class="boton1" onclick="Encriptado()">Encriptar</button>
+                <button class="boton1" onclick="Encriptado()">Encriptar <i class="fa-solid fa-lock" style="margin-left: 2px"></i></button>
               </a>
               <a href="#derecha">
                 <button class="boton2" onclick="desencriptado()">
-                  Desencriptar
+                  Desencriptar <i class="fa-solid fa-lock-open" style="margin-left: 2px;"></i>
                 </button>
               </a>
             </div>
@@ -48,10 +48,7 @@
               <p>Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
           </div>
-          <div
-            class="contenidosDerecha2 transicion"
-            id="contenidosDerecha2"
-          >
+          <div class="contenidosDerecha2 transicion" id="contenidosDerecha2">
             <textarea type="text" id="textoAPoner" readonly></textarea>
             <a href="#izquierda"
               ><div class="boton">
