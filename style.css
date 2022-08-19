@@ -1,4 +1,14 @@
-@keyframes transicions {
+@keyframes transicions22 {
+  from {
+    z-index: -0.1;
+    transform: rotateY(0deg);
+  }
+  to {
+    z-index: 0;
+    transform: rotateY(1080deg);
+  }
+}
+@keyframes transicions223 {
   from {
     z-index: -0.1;
     transform: rotateY(0deg);
@@ -45,6 +55,20 @@
   }
  }
 
+ @keyframes rot2 {
+  0% {
+   transform: rotate(0deg)
+              translate(0px)
+              rotate(0deg);
+  }
+  100% {
+   transform: rotate(10080deg)
+              translate(-10px)
+              rotate(-10080deg)
+              translate(10px) ;
+  }
+ }
+
  @keyframes imgCambia {
   0% {
     filter: opacity(0.4) drop-shadow(0 0 0 rgb(255, 253, 253));
@@ -66,7 +90,35 @@ body {
   animation-name: transicionsHtml;
   animation-duration: 0.8s;
   animation-timing-function: linear;
+  
 }
+
+.vidHidden {
+  display: none;
+}
+
+.vidMostrar{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border-radius: 32px;
+
+}
+
+.vidMostrar video {
+     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+   width: 100%;
+  }
 
 .contenedor-total {
   background: #f3f5fc;
@@ -96,7 +148,7 @@ body {
 }
 
 .contenedor__contenidosIzquierda textarea {
-  padding: 15px 0px 0px 10px;
+  padding: 15px 0px 0px 0px;
   margin-left: 20%;
   position: relative;
   resize: none;
@@ -134,11 +186,10 @@ body {
 }
 
 .botonesYp {
-  position: relative;
-  gap: 0px;
-  width: 70%;
-  padding-left: 20%;
-  top: 18%;
+  position: absolute;
+  width: 50%;
+  margin-left: 15%;
+  bottom: 70px;
 }
 .botonesYp p {
   width: 100%;
@@ -212,28 +263,50 @@ body {
 
 .contenedor__contenidosDerecha {
   position: relative;
-  width: 30%;
-  height: 90vh;
-  padding: 30px 30px 30px 0px;
+  background-color: #ffffff;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  width: 27%;
+  margin: 30px 0 25px 0;
+  position: relative;
+  border-radius: 32px;
+}
+
+.animacion {
+  animation-name: transicions22;
+  animation-duration: 2s;
+}
+
+.animacion2 {
+  animation-name: rot2;
+  animation-duration: 3s;
 }
 
 .contenidosDerecha1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
   position: relative;
   height: 100%;
-  background: #ffffff;
-  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 32px;
-  padding: 0px 60px 0px 60px;
+  padding: 0px 60px 30px 60px;
+  animation-name: transicions22;
+  animation-duration: 4s;
 }
 
 .imagen-muñeco {
   position: relative;
-  top: 130px;
+  width: 100%;
 }
 
 .imagen-muñeco img {
   width: 100%;
-  height: 100%;
 }
 
 .contenidosDerecha1 :nth-child(2) {
@@ -259,54 +332,59 @@ body {
 }
 
 .contenidosDerecha2 {
+  box-sizing: border-box;
   position: relative;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  position: relative;
-  background: #ffffff;
-  box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 32px;
-  padding: 20px 30px 0px 30px;
-  animation-name: transicions;
-  animation-duration: 2s;
+  
+  /* padding: 20px 30px 0px 30px; */
 }
 
-.contenidosDerecha2 textarea {
+.texto-botonCpy {
   position: relative;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.texto-botonCpy textarea {
+  height: 60%;
+  position: relative;
+  text-align: left;
+  padding: 20px 30px 0 30px;
+  width: 80%;
   resize: none;
   border: none;
   outline: none;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 61%;
   font-size: 24px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  background-color: transparent;
   color: #495057;
+}
+
+.texto-botonCpy textarea:hover {
+  overflow: auto;
+}
+
+.animacionTxt{
   animation-name: transicionstxt;
   animation-duration: 4s;
 }
 
-.contenidosDerecha2 textarea:hover {
-  overflow: auto;
-}
-
-.contenidosDerecha2 p:hover {
-  overflow: auto;
-}
-
-.contenidosDerecha2 .boton {
-  position: relative;
+.botonCpy {
   text-align: center;
-  top: 20.5%;
-  height: 10%;
   width: 100%;
+  position: absolute;
+  bottom: 35px;
 }
 
-.contenidosDerecha2 button {
-  position: relative;
+.botonCpy button {
   width: 80%;
   height: 67px;
   border: 1px solid #0a3871;
@@ -321,38 +399,28 @@ body {
   transition: all 0.3s;
 }
 
-.contenidosDerecha2 button a {
-  text-decoration: none;
-  box-shadow: none;
-  color: #0a3871;
-}
-
-.contenidosDerecha2 button:hover {
+.texto-botonCpy button:hover {
   cursor: pointer;
   -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
     box-shadow: 0 1px 1px 0px rgb(0 0 0 / 10%);
   scale: 1.05;
 }
 
-@media (max-width: 1100px) {
-  .imagen-muñeco {
-    top: 160px;
-  }
-}
-
 @media (max-width: 900px) {
   .contenedor {
     flex-wrap: wrap;
-    gap: 100px;
+    /* gap: 50px; */
   }
 
   .contenedor__contenidosIzquierda {
     width: 100%;
+    padding-bottom: 0px;
   }
 
   .contenedor__contenidosIzquierda textarea {
-    margin: 40px 0px 40px 40px;
+    margin: 40px 40px 0px 35px;
     width: 80%;
+    height: 40%;
     font-size: 25px;
   }
 
@@ -361,30 +429,20 @@ body {
   }
 
   .botonesYp {
-    padding: 0px 0px 40px 40px;
-    top: 5%;
-    width: 80%;
+    padding: 0px 0px 0px 35px;
+    margin: 0 40px 20px 0px;
+    width: 85%;
+    bottom: 0px;
   }
 
   .contenedor__contenidosDerecha {
-    width: 80%;
-    padding-left: 40px;
-    top: 10%;
-  }
-
-  .contenidosDerecha1 {
-    padding: 0px;
-    height: 30%;
+    width: 100%;
+    height: 80vh;
+    margin: 40px;
   }
 
   .contenidosDerecha2 button {
     bottom: 40%;
-  }
-
-  .imagen-muñeco {
-    text-align: center;
-    width: 100%;
-    top: 25%;
   }
 
   .imagen-muñeco img {
@@ -398,12 +456,22 @@ body {
     margin-top: 10px;
   }
 
-  .botonesYp {
-    top: 0%;
-    padding-top: 0px;
-  }
-
   .botones {
     flex-wrap: wrap;
   }
+
+  .contenidosDerecha1 :nth-child(2) {
+    font-size: 20px;
+  }
+  
+  .contenidosDerecha1 :nth-child(3) {
+        font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .contenedor__contenidosDerecha {
+      margin: 40px 10px 40px 40px;
+  }
+
 }

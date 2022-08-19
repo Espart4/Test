@@ -25,22 +25,34 @@
           ></textarea>
           <div class="botonesYp">
             <p>
-              <img src="Vector.png" alt="icono-exclamacion" style="filter:opacity(.8) drop-shadow(0 0 0 rgb(0, 0, 0));" />Sólo letras
-              minúsculas y sin acento
+              <img
+                src="Vector.png"
+                alt="icono-exclamacion"
+                style="filter: opacity(0.8) drop-shadow(0 0 0 rgb(0, 0, 0))"
+              />Sólo letras minúsculas y sin acento
             </p>
             <div class="botones">
               <a href="#derecha">
-                <button class="boton1" onclick="Encriptado()">Encriptar <i class="fa-solid fa-lock" style="margin-left: 2px"></i></button>
+                <button class="boton1" onclick="Encriptado()">
+                  Encriptar
+                  <i class="fa-solid fa-lock" style="margin-left: 2px"></i>
+                </button>
               </a>
               <a href="#derecha">
                 <button class="boton2" onclick="desencriptado()">
-                  Desencriptar <i class="fa-solid fa-lock-open" style="margin-left: 2px;"></i>
+                  Desencriptar
+                  <i class="fa-solid fa-lock-open" style="margin-left: 2px"></i>
                 </button>
               </a>
             </div>
           </div>
         </div>
-        <div class="contenedor__contenidosDerecha" id="derecha">
+        <div class="contenedor__contenidosDerecha animacion" id="derecha">
+          <div class="vidHidden" id="video">
+            <video autoplay muted loop poster="">
+              <source src="vid2.mov" type="video/mp4" />
+            </video>
+          </div>
           <div class="contenidosDerecha1" id="contenidosDerecha1">
             <div class="imagen-muñeco">
               <img src="Muñeco.png" alt="buscando-con-lupa" />
@@ -48,15 +60,26 @@
               <p>Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
           </div>
-          <div class="contenidosDerecha2 transicion" id="contenidosDerecha2">
-            <textarea type="text" id="textoAPoner" readonly></textarea>
-            <a href="#izquierda"
-              ><div class="boton">
-                <button onclick="copiar()">
-                  Copiar
-                  <i class="fa-regular fa-copy" style="margin-left: 2px"></i>
-                </button></div
-            ></a>
+          <div class="contenidosDerecha2" id="contenidosDerecha2">
+            <div class="texto-botonCpy">
+              <textarea
+                class="animacionTxt"
+                type="text"
+                id="textoAPoner"
+                readonly
+              ></textarea>
+
+              <div class="botonCpy">
+                <a href="#izquierda"
+                  ><button onclick="copiar()">
+                    Copiar
+                    <i
+                      class="fa-regular fa-copy"
+                      style="margin-left: 2px"
+                    ></i></button
+                ></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

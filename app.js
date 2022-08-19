@@ -21,6 +21,8 @@ function carNoValidos() {
 }
 
 function Encriptado() {
+  animar();
+  videoPop();
   if (cont2None) {
     contenidos1.style.display = "none";
     contenidos2.style.removeProperty("display");
@@ -69,10 +71,11 @@ function Encriptado() {
 
   textoEncriptado = textoNuevo.join("");
   textoAPoner.value = textoEncriptado;
-  textoIngresado.value = "";
 }
 
 function desencriptado() {
+  animar();
+  videoPop();
   if (cont2None) {
     contenidos1.style.display = "none";
     contenidos2.style.removeProperty("display");
@@ -88,7 +91,6 @@ function desencriptado() {
     .replaceAll(u, "u");
 
   textoAPoner.value = textoNuevo;
-  textoIngresado.value = "";
 }
 
 function copiar() {
@@ -97,5 +99,23 @@ function copiar() {
   textoAPoner.select();
   document.execCommand("copy");
   window.getSelection().removeAllRanges();
-  window.location.reload();
+}
+
+function animar() { 
+  document.getElementById("derecha").classList.remove("animacion");
+ document.getElementById("derecha").classList.toggle("animacion2");
+  textoAPoner.classList.toggle("animacionTxt")
+  setTimeout(() => {
+    textoAPoner.classList.toggle("animacionTxt")
+    document.getElementById("derecha").classList.toggle("animacion2");
+  }, 3000); 
+}
+
+function videoPop() {
+  videoMostra = document.getElementById("video");
+  videoMostra.classList.toggle("vidMostrar");
+  setTimeout(() => {
+    videoMostra.classList.toggle("vidMostrar");
+  }, 3000);
+
 }
