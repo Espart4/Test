@@ -131,13 +131,13 @@ body {
 }
 
 .contenedor__contenidosIzquierda {
+  position: relative;
   width: 70%;
   padding: 30px 0px 30px 0px;
   height: 90vh;
 }
 
 .contenedor__contenidosIzquierda .imagen-link {
-  position: relative;
   height: 10%;
   animation-name: imgCambia;
   animation-duration: 1.5s;
@@ -149,8 +149,7 @@ body {
 
 .contenedor__contenidosIzquierda textarea {
   padding: 15px 0px 0px 0px;
-  margin-left: 20%;
-  position: relative;
+  margin-left: 17%;
   resize: none;
   height: 50%;
   width: 65%;
@@ -176,7 +175,6 @@ body {
 }
 
 .contenedor__contenidosIzquierda ::placeholder {
-  position: absolute;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -187,9 +185,9 @@ body {
 
 .botonesYp {
   position: absolute;
-  width: 50%;
-  margin-left: 15%;
-  bottom: 70px;
+  width: 75%;
+  margin-left: 17%;
+  bottom: 60px;
 }
 .botonesYp p {
   width: 100%;
@@ -271,7 +269,6 @@ body {
   justify-items: center;
   width: 27%;
   margin: 30px 0 25px 0;
-  position: relative;
   border-radius: 32px;
 }
 
@@ -333,7 +330,6 @@ body {
 
 .contenidosDerecha2 {
   box-sizing: border-box;
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -350,14 +346,12 @@ body {
 
 .texto-botonCpy textarea {
   height: 60%;
-  position: relative;
   text-align: left;
   padding: 20px 30px 0 30px;
   width: 80%;
   resize: none;
   border: none;
   outline: none;
-  position: relative;
   overflow: hidden;
   font-size: 0px;
   font-family: "Inter";
@@ -473,6 +467,7 @@ body {
 @media (max-width: 360px) {
   .contenedor__contenidosDerecha {
       margin: 40px 10px 40px 40px;
+      width: 80%;
   }
 
 }
