@@ -16,7 +16,7 @@ const valuesLetterChng = Object.values(letterChng);
 const arrayLetterChng = Object.entries(letterChng);
 
 window.onload = textoIngresado.focus();
-carNoValidos();
+window.onload = carNoValidos();
 // function carNoValidos() {
 //   textoIngresado.addEventListener("keyup", (e) => {
 //     let expreg = /[A-Záéíóú\u00B4@!"#$%&/()=?¡¨¨*;:_,.-{}+´´¿'+|°¬~^`]/g
