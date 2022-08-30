@@ -414,7 +414,7 @@ body {
 
   .contenedor__contenidosIzquierda textarea {
     margin: 40px 40px 0px 35px;
-    width: 80%;
+    width: 75%;
     height: 40%;
     font-size: 25px;
   }
@@ -426,7 +426,7 @@ body {
   .botonesYp {
     padding: 0px 0px 0px 35px;
     margin: 0 40px 20px 0px;
-    width: 85%;
+    /* width: 85%; */
     bottom: 0px;
   }
 
