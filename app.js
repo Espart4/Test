@@ -21,7 +21,7 @@ window.onload = carNoValidos();
 function carNoValidos() {
   const textoIngresado = document.getElementById("textoingresado");
   textoIngresado.addEventListener("keyup", (e) => {
-    let expRegu = /[A-ZÑáéíóú@!"#$%&()=?¡¨*;:_,.`´|^~°¬{}+¿'\\\[\]\-]/g; //.- (elimina los numeros)
+    let expRegu = /[A-ZÑáéíóú@!"#$%&()=?¡¨*;:_,.`´|^~°¬{}+¿'\\\[\]\-]/g;
     let valorInput = e.target.value;
     if (expRegu.test(valorInput)) {
       textoIngresado.value = valorInput.replace(expRegu, "");
