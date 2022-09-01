@@ -17,15 +17,6 @@ const arrayLetterChng = Object.entries(letterChng);
 
 window.onload = textoIngresado.focus();
 window.onload = carNoValidos();
-// function carNoValidos() {
-//   textoIngresado.addEventListener("keyup", (e) => {
-//     let expreg = /[A-Záéíóú\u00B4@!"#$%&/()=?¡¨¨*;:_,.-{}+´´¿'+|°¬~^`]/g
-//     let valorInput= e.target.value;
-//       textoIngresado.value = valorInput.replace(
-//         expreg,""
-//       )
-//   });
-// }
 
 function carNoValidos() {
   const textoIngresado = document.getElementById("textoingresado");
@@ -33,15 +24,19 @@ function carNoValidos() {
     let expRegu = /[A-ZÑáéíóú@!"#$%&()=?¡¨*;:_,.`´|^~°¬{}+¿'\\\[\]\-]/g; //.- (elimina los numeros)
     let valorInput = e.target.value;
     if (expRegu.test(valorInput)) {
-      textoIngresado.value = valorInput.replace(expRegu, "")      
-        swal("!No uses caracteres inválidos!","Sólo letras minúsculas y sin acento", "error")
-        .then((willDelete) => {
-          if (willDelete) {
-            textoIngresado.focus()
-          }
-        })
+      textoIngresado.value = valorInput.replace(expRegu, "");
+      swal(
+        "!No uses caracteres inválidos!",
+        "Sólo letras minúsculas y sin acento",
+        "error"
+      ).then((willDelete) => {
+        if (willDelete) {
+          textoIngresado.focus();
+        }
+      });
     }
-  })
+  });
+
 }
 function encriptar() {
   videoPop();
@@ -64,82 +59,6 @@ function encriptar() {
   textoEncriptado2 = textoEncriptado2.join("");
   textoAPoner.value = textoEncriptado2;
 }
-
-// function Encriptar() {
-//   videoPop();
-//   animar();
-//   if (cont2None) {
-//     contenidos1.style.display = "none";
-//     contenidos2.style.removeProperty("display");
-//   }
-
-//   textoDividido = textoIngresado.value.split("");
-//   let textoNuevo = [];
-//   let textoEncriptado;
-
-//   for (let index = 0; index < textoDividido.length; index++) {
-//     let letra = textoDividido[index];
-//     textoNuevo.push(letra);
-//     if (
-//       letra == "a" ||
-//       letra == "e" ||
-//       letra == "i" ||
-//       letra == "o" ||
-//       letra == "u"
-//     ) {
-//       if (letra == "a") {
-//         textoNuevo.pop();
-//         textoNuevo.push(letra.replace(letra, a));
-//       }
-
-//       if (letra == "e") {
-//         textoNuevo.pop();
-//         textoNuevo.push(letra.replace(letra, e));
-//       }
-
-//       if (letra == "i") {
-//         textoNuevo.pop();
-//         textoNuevo.push(letra.replace(letra, i));
-//       }
-
-//       if (letra == "o") {
-//         textoNuevo.pop();
-//         textoNuevo.push(letra.replace(letra, o));
-//       }
-
-//       if (letra == "u") {
-//         textoNuevo.pop();
-//         textoNuevo.push(letra.replace(letra, u));
-//       }
-//     }
-//   }
-
-//   textoEncriptado = textoNuevo.join("");
-//   textoAPoner.value = textoEncriptado;
-// }
-//            /\
-//            ||
-//            ||
-
-// const a = "ai";
-// const e = "enter";
-// const i = "imes";
-// const o = "ober";
-// const u = "ufat";
-
-// mapeoValues= valuesLetterChng.map((x, valorLetra)=> x,valorLetra)
-// let textoEncriptado1= textoIngresado.map(letra => letra.includes(valuesLetterChng))
-
-// let mapValues = Object.entries(letterChng).forEach(([pos,value]) => value)
-// let mapPos = Object.entries(letterChng).forEach(([pos,value]) => pos)
-// let textoNuevo
-// let textoDividido= textoIngresado.split()
-
-// .replaceAll(arrayLetterChng[0][1], arrayLetterChng[0][0])
-// .replaceAll(arrayLetterChng[1][1], arrayLetterChng[1][0])
-// .replaceAll(arrayLetterChng[2][1], arrayLetterChng[2][0])
-// .replaceAll(arrayLetterChng[3][1], arrayLetterChng[3][0])
-// .replaceAll(arrayLetterChng[4][1], arrayLetterChng[4][0]);
 
 function desencriptar() {
   videoPop();
@@ -166,17 +85,14 @@ function copiar() {
   textoAPoner.select();
   document.execCommand("copy");
   window.getSelection().removeAllRanges();
-  let mostrar =setInterval(() => {
-    swal("!TEXTO COPIADO CON EXITO¡","","success")
-    .then((willDelete) => {
+  let mostrar = setInterval(() => {
+    swal("! TEXTO COPIADO ¡", "", "success").then((willDelete) => {
       if (willDelete) {
-        textoIngresado.focus()
+        textoIngresado.focus();
       }
-    })
-    clearInterval(mostrar) 
-  }, 0)
-  // mostrar==1 && clearInterval(mostrar)
-
+    });
+    clearInterval(mostrar);
+  }, 0);
 }
 
 function animar() {
